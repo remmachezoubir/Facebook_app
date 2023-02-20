@@ -1,91 +1,59 @@
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from './page.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
-
+"use client"
+import React from "react"
+import Profile from "@/components/profile"
+import HomePage from "@/components/home"
+import Friends from "@/components/friends"
+import Notification from "@/components/notification"
+import Settings from "@/components/settings"
+import Link from "next/link"
+import { HomeIcon , ProfileIcon , FriendsIcon, NotificationIcon ,SettingIcon , MessengerIcon , PlusIcon ,SearchIcon} from "@/components/svgIcons"
 export default function Home() {
+  const [userPage , setUserPage]=React.useState("home")
+  const [topLogo , settopLogo]=React.useState(true) 
+
+    const HandlePage=(page:any , e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>{
+      //todo learn something about the events
+      setUserPage(page)
+      if(page === "home"){
+        settopLogo(true)
+        return
+      }
+      settopLogo(false)
+    }
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <header className='   w-full   top-0   fixed  bg-white z-10 dark:bg-black  border-b-4 dark:border-none'>
+        
+       {topLogo && <div className='px-3 flex flex-row'> 
+            <h1 className='text-blue-500 font-extrabold text-2xl '>
+           <Link  href={'https://www.facebook.com/zoubir.remmache'}> Facebook</Link> 
+            </h1>
+           <section>
+
+            <MessengerIcon className='absolute h-6   dark:fill-white w-6 right-0'/>
+            <SearchIcon className='absolute h-6  w-6   dark:stroke-orange-50 stroke-black rounded-full right-7'/>
+            <PlusIcon className='absolute h-6  w-6   dark:fill-white  rounded-full right-16'/>
+           </section>
+
+        </div> }
+        <div className=' flex  justify-around mt-4 '>
+            <button className={`${userPage==="home" && 'clicked-top-button'} topButtons`} onClick={(e)=>HandlePage("home" , e)}><HomeIcon className="dark:fill-white dark:stroke-white" /></button>
+            <button className={`${userPage==="friends" && 'clicked-top-button'} topButtons`} onClick={(e)=>HandlePage("friends", e)}><FriendsIcon className="dark:fill-white dark:stroke-white" /></button>
+            {/* <button className='topButtons' onClick={()=>HandlePage("shop")}>Sh</button> */}
+            <button className={`${userPage==='profile' && 'clicked-top-button'} topButtons`} onClick={(e)=>HandlePage("profile" ,e)}><ProfileIcon className=" dark:bg-white rounded-full" /></button>
+            <button className={`${userPage==='notification' && 'clicked-top-button'} topButtons`} onClick={(e)=>HandlePage("notification" ,e)}><NotificationIcon className="dark:fill-white dark:stroke-white"/></button>
+            <button className={`${userPage==='settings' && 'clicked-top-button'} topButtons`} onClick={(e)=>HandlePage("settings" ,e)}><SettingIcon className="dark:fill-white dark:stroke-white"/></button>
         </div>
-      </div>
+    </header>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+  <div className={` ${topLogo && ' mt-24'} ${!topLogo && 'mt-16'}  dark:bg-black  dark:text-white`}>
+    {userPage==="home"&& <HomePage/>}
+    {userPage==="friends"&& <Friends/>}
+    {/* {userPage==="shop"&& <h1>shop</h1>} */}
+    {userPage==="profile"&& <Profile/>}
+    {userPage==="notification"&& <Notification/>}
+    {userPage==="settings"&& <Settings/>}
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
-}
+  </div>    
+    </>
+    )}
