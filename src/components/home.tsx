@@ -1,5 +1,6 @@
 import React from 'react'
 import Post from './post'
+import Link from 'next/link'
 import { ProfileIcon , PhotoIcon } from './svgIcons'
 export default function Home() {
 
@@ -28,7 +29,7 @@ export default function Home() {
      {stories.map((story ,key)=>(
 
        <span className='px-1' key={key}>
-      <section className='story' >{story}</section>
+      <Link href={`/story/${key+1}`}><section className='story'>{story}</section></Link>
       </span> 
        ))}
     </div>
