@@ -31,7 +31,7 @@ export default function Settings() {
            <div className='flex justify-around  flex-row border-t-2 border-sky-400'>
             
             <h2>contact me :</h2>
-           <Link href={'https://www.facebook.com/zoubir.remmache'}>
+           <Link href={'https://www.facebook.com/zoubir.remmach'}>
             <FacebookIcon/>
            </Link>
            <Link href={'https://instagram.com/remmache_zoubir?igshid=ZDdkNtZiNTM='}>

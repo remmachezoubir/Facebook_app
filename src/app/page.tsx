@@ -26,7 +26,7 @@ export default function Home() {
         
        {topLogo && <div className='px-3 flex flex-row'> 
             <h1 className='text-blue-500 font-extrabold text-2xl '>
-           <Link  href={'https://www.facebook.com/zoubir.remmache'}> Facebook</Link> 
+           <Link  href={'https://www.facebook.com/zoubir.remmach'}> Facebook</Link> 
             </h1>
            <section>
 
