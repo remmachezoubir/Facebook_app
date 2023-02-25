@@ -6,7 +6,7 @@ type Myid ={
         id:String
     }
 }
-export default function Story({params : {id }}:Myid) {
+export default function Story({params : {id}}:Myid) {
   return (
    <div className='storyPage'>
     <ProfileIcon className='inline'/>

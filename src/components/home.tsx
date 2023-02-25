@@ -20,7 +20,7 @@ export default function Home() {
 
     <div className='border-b-4  h-10 w-full flex border-gray-400  justify-between'>
     <ProfileIcon className=" dark:bg-white rounded-full" />
-      <span className=' border-2  h-8  w-72 rounded-2xl px-4 border-gray-600    overflow-hidden' contentEditable>what is in your mind? </span>
+      <span className=' border-2  h-8  w-72 rounded-2xl px-4 border-gray-600    overflow-hidden' >what is in your mind? </span>
       <PhotoIcon className=' mr-4'/>
     </div>
 
