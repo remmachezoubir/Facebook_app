@@ -1,6 +1,9 @@
 "use client"
-import React , {useContext , createContext} from 'react'
+import React , {useContext , createContext , ReactNode} from 'react'
 
+interface Pageprops{
+  children : ReactNode;
+}
 interface contType{
     HandlePage :(page:any , e:React.MouseEvent<HTMLButtonElement, MouseEvent>)=>void,
     userPage:any,
@@ -11,7 +14,7 @@ interface contType{
     HandlePage:()=>{} ,
     topLogo:true
 })
-export default function MyProvider({children}) {
+const MyProvider:React.FC<Pageprops>=({children})=> {
     
     const [userPage , setUserPage]=React.useState("home")
     const [topLogo , settopLogo]=React.useState(true) 
@@ -31,4 +34,5 @@ export default function MyProvider({children}) {
     </Mycontext.Provider>
     )
 }
-export const setStateContext=()=>useContext(Mycontext)
+export default MyProvider
+export const useStateContext=()=>useContext(Mycontext)

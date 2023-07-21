@@ -5,10 +5,10 @@ import HomePage from "@/components/home"
 import Friends from "@/components/friends"
 import Notification from "@/components/notification"
 import Settings from "@/components/settings"
-import { setStateContext } from "./MyProvider"
+import { useStateContext } from "./MyProvider"
 import Header from "@/components/Header"
 export default function Home() {
-  const {HandlePage,topLogo,userPage}=setStateContext()
+  const {HandlePage,topLogo,userPage}=useStateContext()
   return (
     <>
   <Header/>

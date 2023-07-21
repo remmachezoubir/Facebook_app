@@ -1,10 +1,10 @@
 import React from 'react'
-import { setStateContext } from '@/app/MyProvider'
+import { useStateContext } from '@/app/MyProvider'
 import { HomeIcon , ProfileIcon , FriendsIcon, NotificationIcon ,SettingIcon , MessengerIcon , PlusIcon ,SearchIcon} from "@/components/svgIcons"
 import Link from "next/link"
 
 export default function Header() {
-  const {HandlePage,topLogo,userPage}=setStateContext()
+  const {HandlePage,topLogo,userPage}=useStateContext()
 
   return (
     <header className='   w-full   top-0   fixed   bg-white z-10 dark:bg-black  border-b-4 dark:border-none'>
