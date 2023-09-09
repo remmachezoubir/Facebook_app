@@ -31,10 +31,10 @@ export default function Settings() {
            <div className='flex justify-around  flex-row border-t-2 border-sky-400'>
             
             <h2>contact me :</h2>
-           <Link href={'https://www.facebook.com/zoubir.remmach'}>
+           <Link href={'https://www.facebook.com/zoubir.ramach'}>
             <FacebookIcon/>
            </Link>
-           <Link href={'https://instagram.com/remmache_zoubir?igshid=ZDdkNtZiNTM='}>
+           <Link href={'https://instagram.com/ramache_zoubir'}>
            <Image alt='Instagram' src={'/Images/instagram-1-svgrepo-com.svg'} width={32} height={32}/>
            </Link>
            </div>
