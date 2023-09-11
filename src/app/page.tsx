@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
   <Header/>
-  <div className={` ${topLogo && ' mt-24'} ${!topLogo && 'mt-16'}  dark:bg-black  dark:text-white`}>
+  <div className={` ${topLogo && ' mt-24 '} ${!topLogo && 'mt-16'}  dark:bg-black  dark:text-white`}>
     {userPage==="home"&& <HomePage/>}
     {userPage==="friends"&& <Friends/>}
     {/* {userPage==="shop"&& <h1>shop</h1>} */}
